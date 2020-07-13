@@ -1,0 +1,61 @@
+#environment exported from local in order to run the files
+name: myenv
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - brotlipy=0.7.0=py38h1e0a361_1000
+  - bzip2=1.0.8=h516909a_2
+  - ca-certificates=2020.6.20=hecda079_0
+  - certifi=2020.6.20=py38h32f6830_0
+  - cffi=1.14.0=py38hd463f26_0
+  - chardet=3.0.4=py38h32f6830_1006
+  - conda=4.8.3=py38h32f6830_2
+  - conda-package-handling=1.6.0=py38h1e0a361_2
+  - cryptography=2.9.2=py38h766eaa4_0
+  - hdf5=1.10.4=hb1b8bf9_0
+  - icu=67.1=he1b5a44_0
+  - idna=2.10=pyh9f0ad1d_0
+  - kallisto=0.46.0=hb6a4e58_0
+  - krb5=1.17.1=hfafb76e_1
+  - ld_impl_linux-64=2.34=h53a641e_5
+  - libarchive=3.3.3=h3a8160c_1008
+  - libcurl=7.71.1=hcdd3856_0
+  - libedit=3.1.20191231=h46ee950_0
+  - libffi=3.2.1=he1b5a44_1007
+  - libgcc-ng=9.1.0=hdf63c60_0
+  - libgfortran-ng=7.3.0=hdf63c60_0
+  - libiconv=1.15=h516909a_1006
+  - libsolv=0.7.14=h8b12597_3
+  - libssh2=1.9.0=hab1572f_2
+  - libstdcxx-ng=9.1.0=hdf63c60_0
+  - libxml2=2.9.10=h72b56ed_1
+  - lz4-c=1.9.2=he1b5a44_1
+  - lzo=2.10=h14c3975_1000
+  - mamba=0.4.1=py38h77160cf_0
+  - ncurses=6.1=hf484d3e_1002
+  - openssl=1.1.1g=h516909a_0
+  - pip=20.1.1=py_1
+  - pycosat=0.6.3=py38h1e0a361_1004
+  - pycparser=2.20=pyh9f0ad1d_2
+  - pyopenssl=19.1.0=py_1
+  - pysocks=1.7.1=py38h32f6830_1
+  - python=3.8.3=cpython_he5300dc_0
+  - python_abi=3.8=1_cp38
+  - readline=8.0=hf8c457e_0
+  - requests=2.24.0=pyh9f0ad1d_0
+  - ruamel_yaml=0.15.80=py38h1e0a361_1001
+  - setuptools=49.1.0=py38h32f6830_0
+  - six=1.15.0=pyh9f0ad1d_0
+  - sqlite=3.32.3=hcee41ef_0
+  - tk=8.6.10=hed695b0_0
+  - tqdm=4.47.0=pyh9f0ad1d_0
+  - urllib3=1.25.9=py_0
+  - wheel=0.34.2=py_1
+  - xz=5.2.5=h516909a_0
+  - yaml=0.2.5=h516909a_0
+  - zlib=1.2.11=h7b6447c_3
+  - zstd=1.4.4=h6597ccf_3
+prefix: /u/home/y/yiwen99/.conda/envs/myenv
