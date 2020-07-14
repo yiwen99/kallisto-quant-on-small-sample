@@ -1,11 +1,4 @@
 BASE = '/u/project/zarlab/hjp/geuvadis_data'
-#SAMPLE_NAMES = dict()
-#with open('/u/project/zarlab/hjp/geuvadis_data/metadata/clean.tsv') as file_handle:
-    #for line in file_handle:
-        #line=line.split('\t')
-        #SAMPLE_NAMES[line[0]] = line[1:3]
-#SAMPLE_KEYS = sorted(os.listdir(BASE+'/rna'))
-#need to change above for running all samples
 
 SAMPLE_NAMES = dict()
 with open('/u/project/zarlab/hjp/geuvadis_data/annotation/yri_sample_intersection.txt') as file_handle:
