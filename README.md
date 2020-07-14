@@ -4,7 +4,7 @@ My work on running kallisto quant on small sample for UCLA BIG summer 2020 (Prof
 # preparations
 Snakemake must be installed in order to run the Snakefiles.
 
-The idx file is already generated using kallisto index command on gencode.v34.fa file and should be placed inside this folder.
+The idx file is already generated using kallisto index command on cdna.fa file and should be placed inside this folder.
 
-path to gencode.v34.fa:
-   /u/project/zarlab/hjp/geuvadis_data/annotation/gencode.v34.fa
+path to cdna.fa:
+/u/project/zarlab/hjp/geuvadis_data/annoation/cdna.fa
