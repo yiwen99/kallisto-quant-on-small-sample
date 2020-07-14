@@ -1,8 +1,19 @@
-# This snakefile is aimed to run kallisto quant on multiple paired-read samples
-# the folder results need to be made in the current directory
-
 BASE = '/u/project/zarlab/hjp/geuvadis_data'
-SAMPLE_KEYS = sorted(os.listdir(BASE+'/rna'))
+#SAMPLE_NAMES = dict()
+#with open('/u/project/zarlab/hjp/geuvadis_data/metadata/clean.tsv') as file_handle:
+    #for line in file_handle:
+        #line=line.split('\t')
+        #SAMPLE_NAMES[line[0]] = line[1:3]
+#SAMPLE_KEYS = sorted(os.listdir(BASE+'/rna'))
+#need to change above for running all samples
+
+SAMPLE_NAMES = dict()
+with open('/u/project/zarlab/hjp/geuvadis_data/annotation/yri_sample_intersection.txt') as file_handle:
+    for line in file_handle:
+        line=line.split('\n')
+        SAMPLE_NAMES[line[0]] = line
+
+SAMPLE_KEYS=sorted(SAMPLE_NAMES)
 
 rule all:
     input:
@@ -10,7 +21,7 @@ rule all:
 rule kallisto_quant:
     input:
         fq= [BASE+'/rna/{sample}/{sample}_1.fastq.gz',BASE+'/rna/{sample}/{sample}_2.fastq.gz'],
-        idx= "/u/project/zarlab/yiwen99/gencode.v34.idx"
+        idx= "/u/project/zarlab/yiwen99/quant/transcriptome.idx"
     output:
         "/u/project/zarlab/yiwen99/quant/results/{sample}/abundance.h5"
     log:
