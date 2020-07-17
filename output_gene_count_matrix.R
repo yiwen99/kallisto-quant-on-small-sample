@@ -13,16 +13,21 @@ to_gene <- read.delim(file.path("/u/project/zarlab/hjp/geuvadis_data/annotation"
 #to_gene is now a 3-col matrix, need to make tx2gene a 2-column matrix
 
 #make a 2-col transcript to gene matrix
-#the second column is the ensembl gene name
 tx2gene<-to_gene[,c(1,2)]
-tx2gene$V2<-tx2gene$V2[1:11]
 head(tx2gene)
 
+#report simply counts, write to a rds file
+txi.kallisto <- tximport(files, type = "kallisto", tx2gene=tx2gene, txOut = FALSE)
+counts <- txi.kallisto$counts
+head(counts)
+saveRDS(counts, file = "counts.rds")
+
+
+
+#report scaled TPM, write to a txt and tsv
 txi.kallisto <- tximport(files, type = "kallisto",countsFromAbundance = "scaledTPM", tx2gene=tx2gene, txOut = FALSE)
-count_matrix <- txi.kallisto$counts
-head(count_matrix)
-
-write.table(count_matrix, file="COUNTS.txt", append = FALSE, sep = "\t", dec = ".", row.names = TRUE, col.names = TRUE)
-#write.table(count_matrix, file="COUNTS.tsv",row.names=TRUE,col.names=TRUE, sep='\t')
-
+count_matrix_TPM <- txi.kallisto$counts
+head(count_matrix_TPM)
+write.table(count_matrix_TPM, file="COUNTS_TPM.txt", append = FALSE, sep = "\t", dec = ".", row.names = TRUE, col.names = TRUE)
+write.table(count_matrix_TPM, file="COUNTS_TPM.tsv",row.names=TRUE,col.names=TRUE, sep='\t')
 
