@@ -17,15 +17,17 @@ tx2gene<-to_gene[,c(1,2)]
 head(tx2gene)
 
 #report simply counts, write to a rds file
-txi.kallisto <- tximport(files, type = "kallisto", tx2gene=tx2gene, txOut = FALSE)
-counts <- txi.kallisto$counts
-head(counts)
-saveRDS(counts, file = "counts.rds")
+txi.kallisto.counts <- tximport(files, type = "kallisto", tx2gene=tx2gene, txOut = FALSE)
+#counts <- txi.kallisto$counts
+#head(counts)
+saveRDS(txi.kallisto.counts, file = "counts.rds")
 
 
 
 #report scaled TPM, write to a txt and tsv
 txi.kallisto <- tximport(files, type = "kallisto",countsFromAbundance = "scaledTPM", tx2gene=tx2gene, txOut = FALSE)
+saveRDS(txi.kallisto, file = "counts_TPM.rds")
+
 count_matrix_TPM <- txi.kallisto$counts
 head(count_matrix_TPM)
 write.table(count_matrix_TPM, file="COUNTS_TPM.txt", append = FALSE, sep = "\t", dec = ".", row.names = TRUE, col.names = TRUE)
