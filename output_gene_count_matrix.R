@@ -23,5 +23,6 @@ count_matrix <- txi.kallisto$counts
 head(count_matrix)
 
 write.table(count_matrix, file="COUNTS.txt", append = FALSE, sep = "\t", dec = ".", row.names = TRUE, col.names = TRUE)
+#write.table(count_matrix, file="COUNTS.tsv",row.names=TRUE,col.names=TRUE, sep='\t')
 
 
